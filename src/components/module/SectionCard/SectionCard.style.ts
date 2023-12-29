@@ -38,6 +38,7 @@ export const Hr = styled.hr`
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
   margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const List = styled.div`
