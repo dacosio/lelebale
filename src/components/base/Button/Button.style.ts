@@ -16,7 +16,7 @@ const hoverBgColor: Record<Variants, string> = {
 };
 
 const padding: Record<ButtonSizes, string> = {
-  sm: "",
+  sm: "12px 27px",
   md: "12px 27px",
   lg: "",
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavbarProps } from "./Navbar.props";
 import { Container, Right, Logo, Concierge } from "./Navbar.style";
 import Button from "components/base/Button";
@@ -6,7 +6,12 @@ import Typography from "components/base/Typography";
 import { BiMessageDetail } from "react-icons/bi";
 import LelebaleLogo from "../../../images/lelebaleLogo.png";
 
+import ListItem from "components/base/ListItem";
+import { motion, AnimatePresence } from "framer-motion";
+
 const Navbar = (props: NavbarProps): JSX.Element => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Container>
       <img
@@ -15,11 +20,50 @@ const Navbar = (props: NavbarProps): JSX.Element => {
         style={{ height: "auto", width: "100px" }}
       />
       <Right>
-        <Concierge>
+        <Concierge onClick={() => setIsOpen(!isOpen)}>
           <Typography variant="list">concierge</Typography>
           <BiMessageDetail size={23} />
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                style={{
+                  position: "absolute",
+                  bottom: -180,
+                  right: 0,
+                  textAlign: "right",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  width: "100%",
+                  whiteSpace: "nowrap",
+                }}>
+                <Button
+                  text="Message us"
+                  variant="light"
+                  size="sm"
+                  style={{ marginBottom: 10 }}
+                />
+                <Button
+                  text="Packages"
+                  variant="light"
+                  size="sm"
+                  style={{ marginBottom: 10 }}
+                />
+                <Button
+                  text="FAQ"
+                  variant="light"
+                  size="sm"
+                  style={{ marginBottom: 10 }}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Concierge>
-        <Button variant="dark" text="Book Now" className="header-btn"/>
+
+        <Button variant="dark" text="Book Now" className="header-btn" />
       </Right>
     </Container>
   );

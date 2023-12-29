@@ -28,12 +28,17 @@ export const Right = styled.div`
       display: none;
     }
   }
+
+  // position: relative;
 `;
 
 export const Concierge = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  cursor: pointer;
+
+  position: relative;
 `;
 
 export const Sticky = styled.nav`
