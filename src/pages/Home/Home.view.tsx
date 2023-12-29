@@ -94,7 +94,7 @@ const HomeView = (props: HomeGeneratedProps) => {
             blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
             reprehenderit ipsum alias harum ab quis libero?"
         src={Package1}
-        seeMore="click here to navigate"
+        seeMore="Lele Bale at Villa Dolores"
         map
       />
       <Bottom>
