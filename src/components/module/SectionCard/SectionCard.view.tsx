@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { SectionCardProps } from "./SectionCard.props";
 import {
   Container,
@@ -14,34 +15,49 @@ import Typography from "components/base/Typography";
 import OurStoryImg from "../../../images/ourStory.jpg";
 
 const SectionCard = (props: SectionCardProps): JSX.Element => {
-  const { title } = props;
+  const { title, description, lists } = props;
+  const controls = useAnimation();
+  const sectionCardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionCardRef.current) {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const sectionCardTop = 40;
+
+        if (scrollY > sectionCardTop) {
+          controls.start({ opacity: 1, y: 0 });
+        } else {
+          controls.start({ opacity: 0, y: 50 });
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
+
   return (
-    <Container>
-      <Title title={title} />
-      <Wrapper>
-        <Left>
-          <Typography variant="body" style={{ marginBottom: "3rem" }}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
-            exercitationem neque hic nobis vitae quas earum ducimus laboriosam
-            saepe voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Dicta porro placeat voluptatibus doloremque dignissimos
-            blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
-            reprehenderit ipsum alias harum ab quis libero?
-          </Typography>
-          <List>
-            <Typography variant="list">Lorem, ipsum.</Typography>
-            <Hr />
-          </List>
-          <List>
-            <Typography variant="list">Lorem, ipsum.</Typography>
-            <Hr />
-          </List>
-          <List>
-            <Typography variant="list">Lorem, ipsum.</Typography>
-            <Hr />
-          </List>
-          <List>
-            <Typography variant="list">Lorem, ipsum.</Typography>
+    <Container ref={sectionCardRef}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={controls}
+        transition={{ duration: 0.4 }}>
+        <Title title={title} />
+        <Wrapper>
+          <Left>
+            <Typography variant="body" style={{ marginBottom: "3rem" }}>
+              {description}
+            </Typography>
+            {lists &&
+              lists.map((item, index) => (
+                <List key={index}>
+                  <Typography variant="list">{item}</Typography>
+                  {index < lists.length - 1 && <Hr />}
+                </List>
+              ))}
             <hr
               style={{
                 border: 0,
@@ -50,12 +66,12 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
                 marginTop: "1rem",
               }}
             />
-          </List>
-        </Left>
-        <Right>
-          <StoryImage alt="story" src={OurStoryImg} />
-        </Right>
-      </Wrapper>
+          </Left>
+          <Right>
+            <StoryImage alt="story" src={OurStoryImg} />
+          </Right>
+        </Wrapper>
+      </motion.div>
     </Container>
   );
 };

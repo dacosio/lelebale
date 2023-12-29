@@ -38,7 +38,16 @@ const HomeView = (props: HomeGeneratedProps) => {
           </HeroSubtitle>
         </HeroWrapper>
       </Hero>
-      <SectionCard title="Our Story" />
+      <SectionCard
+        title="Our Story"
+        description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+            exercitationem neque hic nobis vitae quas earum ducimus laboriosam
+            saepe voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Dicta porro placeat voluptatibus doloremque dignissimos
+            blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
+            reprehenderit ipsum alias harum ab quis libero?"
+        lists={["lorem ipsum", "lorem ipsum", "lorem ipsum"]}
+      />
     </Container>
   );
 };
