@@ -7,6 +7,8 @@ import {
   HeroHeader,
   HeroSubtitle,
   HeroWrapper,
+  Bottom,
+  BottomSection
 } from "./Home.style";
 import Header from "components/layout/Header";
 import StickyNav from "react-sticky-nav";
@@ -22,6 +24,7 @@ import { TbToolsKitchen } from "react-icons/tb";
 import { MdLocalParking } from "react-icons/md";
 
 import Footer from "components/layout/Footer";
+import Title from "components/base/Title";
 
 const HomeView = (props: HomeGeneratedProps) => {
   return (
@@ -92,6 +95,11 @@ const HomeView = (props: HomeGeneratedProps) => {
         seeMore="click here to navigate"
         map
       />
+      <Bottom>
+        <BottomSection>
+        <Title title="Gallery" />
+        </BottomSection>
+      </Bottom>
       <Footer />
     </Container>
   );

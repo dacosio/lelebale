@@ -48,3 +48,25 @@ export const HeroWrapper = styled.div`
   background-color: ${({ theme }) => theme.dark};
   width: 100%;
 `;
+
+export const Bottom = styled.div`
+  background-color: ${({ theme }) => theme.dark};
+  height: 20vh;
+  p {
+    color: white;
+  }
+  hr {
+    background: ${({ theme }) => theme.light};
+  }
+`;
+
+export const BottomSection = styled.section`
+  padding: 4rem 4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 3rem;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 1rem 1rem;
+  }
+`;
