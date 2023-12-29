@@ -6,6 +6,8 @@ import {
   Left,
   Right,
   StoryImage,
+  Hr,
+  List,
 } from "./SectionCard.style";
 import Title from "../../base/Title";
 import Typography from "components/base/Typography";
@@ -18,7 +20,7 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
       <Title title={title} />
       <Wrapper>
         <Left>
-          <Typography variant="body">
+          <Typography variant="body" style={{ marginBottom: "3rem" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
             exercitationem neque hic nobis vitae quas earum ducimus laboriosam
             saepe voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -26,12 +28,32 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
             blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
             reprehenderit ipsum alias harum ab quis libero?
           </Typography>
+          <List>
+            <Typography variant="list">Lorem, ipsum.</Typography>
+            <Hr />
+          </List>
+          <List>
+            <Typography variant="list">Lorem, ipsum.</Typography>
+            <Hr />
+          </List>
+          <List>
+            <Typography variant="list">Lorem, ipsum.</Typography>
+            <Hr />
+          </List>
+          <List>
+            <Typography variant="list">Lorem, ipsum.</Typography>
+            <hr
+              style={{
+                border: 0,
+                height: "1px",
+                background: "black",
+                marginTop: "1rem",
+              }}
+            />
+          </List>
         </Left>
         <Right>
-          <StoryImage
-            alt="story"
-            src={OurStoryImg}
-          />
+          <StoryImage alt="story" src={OurStoryImg} />
         </Right>
       </Wrapper>
     </Container>

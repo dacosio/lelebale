@@ -20,10 +20,26 @@ export const Hero = styled.div`
 
 export const HeroHeader = styled.h1`
   padding: 1rem 4rem 0 4rem;
+  margin-bottom: 0;
+
+  @media screen and (max-width: 425px) {
+    padding: 1rem 1rem 0 1rem;
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 export const HeroSubtitle = styled.h2`
   padding: 0 4rem 1rem 4rem;
+  margin-top: 0;
+
+  @media screen and (max-width: 425px) {
+    padding: 0rem 1rem 1rem 1rem;
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 export const HeroWrapper = styled.div`
@@ -32,5 +48,3 @@ export const HeroWrapper = styled.div`
   background-color: ${({ theme }) => theme.dark};
   width: 100%;
 `;
-
-

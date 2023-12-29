@@ -10,7 +10,7 @@ const Title = (props: TitleProps): JSX.Element => {
       <Typography variant="title2" weight="500">
         {title}
       </Typography>
-      <Hr />
+      <Hr/>
     </Container>
   );
 };

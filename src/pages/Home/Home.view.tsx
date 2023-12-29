@@ -33,7 +33,7 @@ const HomeView = (props: HomeGeneratedProps) => {
           </HeroHeader>
           <HeroSubtitle>
             <Typography variant="subtitle1" style={{ color: "white" }}>
-              Poolside & Patio Party Place Serving what you bring
+              Poolside & Patio Party Place
             </Typography>
           </HeroSubtitle>
         </HeroWrapper>

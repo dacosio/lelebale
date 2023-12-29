@@ -19,7 +19,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           <Typography variant="list">concierge</Typography>
           <BiMessageDetail size={23} />
         </Concierge>
-        <Button variant="dark" text="Book Now" />
+        <Button variant="dark" text="Book Now" className="header-btn"/>
       </Right>
     </Container>
   );
