@@ -55,10 +55,10 @@ export const SeeMore = styled.div`
   align-items: center;
   margin-top: 2rem;
   cursor: pointer;
-  transition: text-decoration 0.3s ease-in-out;
+  // transition: text-decoration 0.3s ease-in-out;
 
-  &:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-  }
+  // &:hover {
+  //   text-decoration: underline;
+  //   text-underline-offset: 0.2rem;
+  // }
 `;

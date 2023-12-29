@@ -75,7 +75,7 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
 
             {seeMore && (
               <SeeMore>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" className="underline">
                   {map ? (
                     <a
                       href="https://www.google.com/maps/dir//villa+dolores+mexico+pampanga/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3396f1e4029dc7a7:0x909cf2826c4ff5e8?sa=X&ved=2ahUKEwiKzM6inbSDAxVxHzQIHRjLDF0Q9Rd6BAgyEAA"
