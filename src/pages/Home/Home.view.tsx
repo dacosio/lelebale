@@ -21,6 +21,8 @@ import { FaPersonSwimming } from "react-icons/fa6";
 import { TbToolsKitchen } from "react-icons/tb";
 import { MdLocalParking } from "react-icons/md";
 
+import Footer from "components/layout/Footer";
+
 const HomeView = (props: HomeGeneratedProps) => {
   return (
     <Container>
@@ -90,6 +92,7 @@ const HomeView = (props: HomeGeneratedProps) => {
         seeMore="click here to navigate"
         map
       />
+      <Footer />
     </Container>
   );
 };
