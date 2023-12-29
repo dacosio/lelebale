@@ -4,14 +4,21 @@ import Typography from "components/base/Typography";
 
 export const Container = styled.div`
   padding: 3.5rem 4rem;
+
+  @media screen and (max-width: 425px) {
+    padding: 2rem 1rem;
+  }
 `;
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<{ order?: boolean }>`
   display: grid;
-  grid-template-columns: 35% 1fr;
-  order: 0;
+  grid-template-columns: ${({ order }) => (order ? "1fr 35%" : "35% 1fr")};
   gap: 3rem;
   padding-top: 2rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: unset;
+  }
 `;
 
 export const Left = styled.div``;
@@ -36,4 +43,9 @@ export const Hr = styled.hr`
 
 export const List = styled.div`
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;
+
+export const ListIcon = styled.div``;

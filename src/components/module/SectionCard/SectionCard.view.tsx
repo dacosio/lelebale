@@ -9,13 +9,13 @@ import {
   StoryImage,
   Hr,
   List,
+  ListIcon,
 } from "./SectionCard.style";
 import Title from "../../base/Title";
 import Typography from "components/base/Typography";
-import OurStoryImg from "../../../images/ourStory.jpg";
 
 const SectionCard = (props: SectionCardProps): JSX.Element => {
-  const { title, description, lists } = props;
+  const { title, description, lists, order, src } = props;
   const controls = useAnimation();
   const sectionCardRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +28,7 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
         if (scrollY > sectionCardTop) {
           controls.start({ opacity: 1, y: 0 });
         } else {
-          controls.start({ opacity: 0, y: 50 });
+          controls.start({ opacity: 0.3, y: 50 });
         }
       }
     };
@@ -42,22 +42,26 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
   return (
     <Container ref={sectionCardRef}>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0.3, y: 50 }}
         animate={controls}
-        transition={{ duration: 0.4 }}>
+        transition={{ duration: 0.5 }}>
         <Title title={title} />
-        <Wrapper>
-          <Left>
+        <Wrapper order={order}>
+          <Left style={order ? { order: 1 } : { order: 0 }}>
             <Typography variant="body" style={{ marginBottom: "3rem" }}>
               {description}
             </Typography>
             {lists &&
               lists.map((item, index) => (
-                <List key={index}>
-                  <Typography variant="list">{item}</Typography>
+                <>
+                  <List key={index}>
+                    {item.icon && <ListIcon>{item.icon}</ListIcon>}
+                    <Typography variant="list">{item.label}</Typography>
+                  </List>
                   {index < lists.length - 1 && <Hr />}
-                </List>
+                </>
               ))}
+
             <hr
               style={{
                 border: 0,
@@ -67,8 +71,8 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
               }}
             />
           </Left>
-          <Right>
-            <StoryImage alt="story" src={OurStoryImg} />
+          <Right style={order ? { order: 0 } : { order: 1 }}>
+            <StoryImage alt="story" src={src} />
           </Right>
         </Wrapper>
       </motion.div>
