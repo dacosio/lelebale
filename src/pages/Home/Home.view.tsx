@@ -9,6 +9,7 @@ import {
   HeroWrapper,
   Bottom,
   BottomSection,
+  Swipe,
 } from "./Home.style";
 import Header from "components/layout/Header";
 import StickyNav from "react-sticky-nav";
@@ -25,6 +26,7 @@ import { MdLocalParking } from "react-icons/md";
 
 import Footer from "components/layout/Footer";
 import Title from "components/base/Title";
+import Carousel from "components/module/Carousel";
 
 const HomeView = (props: HomeGeneratedProps) => {
   return (
@@ -99,6 +101,9 @@ const HomeView = (props: HomeGeneratedProps) => {
         <BottomSection>
           <Title title="Gallery" />
         </BottomSection>
+        <Swipe>
+          <Carousel />
+        </Swipe>
       </Bottom>
       <Footer />
     </Container>

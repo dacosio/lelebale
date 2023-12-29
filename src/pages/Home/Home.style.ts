@@ -51,7 +51,7 @@ export const HeroWrapper = styled.div`
 
 export const Bottom = styled.div`
   background-color: ${({ theme }) => theme.dark};
-  height: 20vh;
+  padding-bottom: 5rem;
   p {
     color: white;
   }
@@ -62,6 +62,17 @@ export const Bottom = styled.div`
 
 export const BottomSection = styled.section`
   padding: 4rem 4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 3rem;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 1rem 1rem;
+  }
+`;
+
+export const Swipe = styled.div`
+  padding: 0 4rem 1rem 4rem;
 
   @media screen and (max-width: 768px) {
     padding: 1rem 3rem;
