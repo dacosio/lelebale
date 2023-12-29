@@ -93,3 +93,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .slick-list {
   /* margin: 0 -27px; */
 }
+
+nav {
+  z-index: 10;
+}

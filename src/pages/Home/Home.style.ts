@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { theme } from "utils/Theme";
 import HeroImg from "../../images/hero.jpg";
 
 export const Container = styled.div``;
@@ -18,3 +17,20 @@ export const Hero = styled.div`
   max-height: 100%;
   height: calc(100vh - 122px);
 `;
+
+export const HeroHeader = styled.h1`
+  padding: 1rem 4rem 0 4rem;
+`;
+
+export const HeroSubtitle = styled.h2`
+  padding: 0 4rem 1rem 4rem;
+`;
+
+export const HeroWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  background-color: ${({ theme }) => theme.dark};
+  width: 100%;
+`;
+
+

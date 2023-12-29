@@ -33,20 +33,22 @@ export const ButtonContainer = styled.button<
 >`
   padding: ${({ size }) => padding[size]};
   background-color: ${({ variant }) => backgroundColor[variant]};
-  border: ${({ variant }) => border[variant]};
   width: ${(props) => (props.takeFullWidth ? "100%" : "auto")};
   font-family: "Sanchez", sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  border: 0;
   :focus {
     outline: none;
   }
 
   :hover {
     background-color: ${({ variant }) => hoverBgColor[variant]};
+    border: ${({ variant, theme }) =>
+      variant == "dark" ? "1px solid black" : "none"};
+
     p {
       color: ${({ variant, theme }) =>
         variant === "dark" ? theme.dark : theme.light};
