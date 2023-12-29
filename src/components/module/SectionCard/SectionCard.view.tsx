@@ -13,7 +13,7 @@ import {
   SeeMore,
 } from "./SectionCard.style";
 import Title from "../../base/Title";
-import Typography from "components/base/Typography";
+import Typography from "../../base/Typography";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Map from "../Map";
 const SectionCard = (props: SectionCardProps): JSX.Element => {

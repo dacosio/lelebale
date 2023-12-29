@@ -8,12 +8,12 @@ import {
   HeroSubtitle,
   HeroWrapper,
   Bottom,
-  BottomSection
+  BottomSection,
 } from "./Home.style";
 import Header from "components/layout/Header";
 import StickyNav from "react-sticky-nav";
 import Navbar from "components/layout/Navbar";
-import Typography from "components/base/Typography";
+import Typography from "../../components/base/Typography";
 import SectionCard from "components/module/SectionCard";
 import OurStoryImg from "../../images/ourStory.jpg";
 import Package1 from "../../images/packages/package1.jpg";
@@ -97,7 +97,7 @@ const HomeView = (props: HomeGeneratedProps) => {
       />
       <Bottom>
         <BottomSection>
-        <Title title="Gallery" />
+          <Title title="Gallery" />
         </BottomSection>
       </Bottom>
       <Footer />

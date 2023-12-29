@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderProps } from "./Header.props";
 import { Container } from "./Header.style";
-import Typography from "components/base/Typography";
+import Typography from "../../base/Typography";
 
 const Header = (props: HeaderProps): JSX.Element => {
   return (

@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { NavbarProps } from "./Navbar.props";
 import { Container, Right, Logo, Concierge } from "./Navbar.style";
 import Button from "components/base/Button";
-import Typography from "components/base/Typography";
+import Typography from "../../base/Typography";
 import { BiMessageDetail } from "react-icons/bi";
 import LelebaleLogo from "../../../images/lelebaleLogo.png";
 
-import ListItem from "components/base/ListItem";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = (props: NavbarProps): JSX.Element => {
