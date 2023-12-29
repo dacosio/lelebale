@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { theme } from "../../../utils/Theme";
-import Typography from "components/base/Typography";
 
 export const Container = styled.div`
   padding: 3.5rem 4rem;
@@ -49,3 +48,17 @@ export const List = styled.div`
 `;
 
 export const ListIcon = styled.div``;
+
+export const SeeMore = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+`;

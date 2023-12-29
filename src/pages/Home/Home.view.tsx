@@ -21,6 +21,8 @@ import { FaPersonSwimming } from "react-icons/fa6";
 import { TbToolsKitchen } from "react-icons/tb";
 import { MdLocalParking } from "react-icons/md";
 
+import Map from "../../components/module/Map";
+
 const HomeView = (props: HomeGeneratedProps) => {
   return (
     <Container>
@@ -77,6 +79,21 @@ const HomeView = (props: HomeGeneratedProps) => {
         ]}
         order
         src={Package1}
+        seeMore="click here to see more"
+      />
+      <SectionCard
+        title="Our Location"
+        description=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+            exercitationem neque hic nobis vitae quas earum ducimus laboriosam
+            saepe voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Dicta porro placeat voluptatibus doloremque dignissimos
+            blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
+            reprehenderit ipsum alias harum ab quis libero?"
+        // lists={["fully furnished", "swimming pool", "complete kitchen", "parking"]}
+
+        src={Package1}
+        seeMore="click here to navigate"
+        map
       />
     </Container>
   );
