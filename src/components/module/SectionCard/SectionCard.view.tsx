@@ -55,7 +55,7 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
               lists.map((item, index) => (
                 <>
                   <List key={index}>
-                    {item.icon && <ListIcon>{item.icon}</ListIcon>}
+                    {item.icon && <ListIcon as={item.icon} />}
                     <Typography variant="list">{item.label}</Typography>
                   </List>
                   {index < lists.length - 1 && <Hr />}

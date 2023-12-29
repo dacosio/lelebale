@@ -15,6 +15,11 @@ import Typography from "components/base/Typography";
 import SectionCard from "components/module/SectionCard";
 import OurStoryImg from "../../images/ourStory.jpg";
 import Package1 from "../../images/packages/package1.jpg";
+import { LuBedDouble } from "react-icons/lu";
+import { FaPersonSwimming } from "react-icons/fa6";
+
+import { TbToolsKitchen } from "react-icons/tb";
+import { MdLocalParking } from "react-icons/md";
 
 const HomeView = (props: HomeGeneratedProps) => {
   return (
@@ -48,7 +53,11 @@ const HomeView = (props: HomeGeneratedProps) => {
             elit. Dicta porro placeat voluptatibus doloremque dignissimos
             blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
             reprehenderit ipsum alias harum ab quis libero?"
-        lists={[{ label: "Common spaces" }, { label: "Pergola" }, { label: "Pergola" }]}
+        lists={[
+          { label: "Common spaces" },
+          { label: "Pergola" },
+          { label: "Pergola" },
+        ]}
         src={OurStoryImg}
       />
       <SectionCard
@@ -60,7 +69,12 @@ const HomeView = (props: HomeGeneratedProps) => {
             blanditiis rem, ratione molestias ullam voluptate beatae qui, soluta
             reprehenderit ipsum alias harum ab quis libero?"
         // lists={["fully furnished", "swimming pool", "complete kitchen", "parking"]}
-        lists={[{ label: "lorem", icon: "ipsum" }, { label: "Pergola" }]}
+        lists={[
+          { label: "Fully Furnished", icon: LuBedDouble },
+          { label: "Swimming Pool", icon: FaPersonSwimming },
+          { label: "Complete Kitchen", icon: TbToolsKitchen },
+          { label: "Parking", icon: MdLocalParking },
+        ]}
         order
         src={Package1}
       />
