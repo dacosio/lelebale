@@ -12,7 +12,7 @@ const Carousel = (props: CarouselProps): JSX.Element => {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        loop
+        loop={true}
         autoplay={{
           delay: 2000,
         }}

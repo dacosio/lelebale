@@ -16,6 +16,8 @@ import Title from "../../base/Title";
 import Typography from "../../base/Typography";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Map from "../Map";
+import { Link } from "react-router-dom";
+
 const SectionCard = (props: SectionCardProps): JSX.Element => {
   const { title, description, lists, order, src, seeMore, map } = props;
   const controls = useAnimation();
@@ -80,14 +82,29 @@ const SectionCard = (props: SectionCardProps): JSX.Element => {
                     <a
                       href="https://www.google.com/maps/dir//villa+dolores+mexico+pampanga/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3396f1e4029dc7a7:0x909cf2826c4ff5e8?sa=X&ved=2ahUKEwiKzM6inbSDAxVxHzQIHRjLDF0Q9Rd6BAgyEAA"
                       target="_blank"
-                      style={{ textDecoration: "none", color: "black" }}>
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        display: "flex",
+                        gap: "1rem",
+                      }}>
                       {seeMore}
+                      <HiOutlineArrowLongRight size={30} />
                     </a>
                   ) : (
-                    seeMore
+                    <Link
+                      to="/package"
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        display: "flex",
+                        gap: "1rem",
+                      }}>
+                      {seeMore}
+                      <HiOutlineArrowLongRight size={30} />
+                    </Link>
                   )}
                 </Typography>
-                <HiOutlineArrowLongRight size={30} />
               </SeeMore>
             )}
           </Left>
