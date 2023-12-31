@@ -12,4 +12,5 @@ export interface PackageGeneratedProps {
   isOpenDrawer: boolean;
   setIsOpenDrawer: Dispatch<SetStateAction<boolean>>;
   isModalVisible: boolean;
+  bundle: string;
 }

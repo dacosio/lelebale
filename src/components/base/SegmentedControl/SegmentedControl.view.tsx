@@ -8,25 +8,23 @@ const SegmentedControl = (props: SegmentedControlProps): JSX.Element => {
   const { options, selectedOption, onClickControl } = props;
 
   return (
-    <Container>
-      <Wrapper>
-        {options.map((option) => {
-          return (
-            <div key={option}>
-              <Button
-                text={option}
-                variant={option === selectedOption ? "dark" : "light"}
-                size="sm"
-                onClick={() => onClickControl(option)}
-                hover={false}
-                takeFullWidth
-                className="segment-btn"
-              />
-            </div>
-          );
-        })}
-      </Wrapper>
-    </Container>
+    <>
+      {options.map((option) => {
+        return (
+          <div key={option}>
+            <Button
+              text={option}
+              variant={option === selectedOption ? "dark" : "light"}
+              size="sm"
+              onClick={() => onClickControl(option)}
+              hover={false}
+              takeFullWidth
+              className="segment-btn"
+            />
+          </div>
+        );
+      })}
+    </>
   );
 };
 

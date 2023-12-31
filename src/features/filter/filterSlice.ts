@@ -16,7 +16,6 @@ const packageSlice = createSlice({
     storePackage: (state, action) => {
       state.package = action.payload;
     },
-   
   },
 });
 
@@ -25,3 +24,14 @@ export const { storePackage } = packageSlice.actions;
 export default packageSlice.reducer;
 
 export const selectPackage = (state: RootState) => state.package.package;
+
+/*
+Usage: 
+import { selectPackage } from "./filterSlice"
+
+const dispatch = useAppDispatch();
+dispatch(storePackage('package a);
+
+const package = useAppSelector(selectPackage);
+
+*/

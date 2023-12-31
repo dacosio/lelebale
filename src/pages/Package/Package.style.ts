@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "utils/Theme";
 import PackageHero from "../../images/packages/packageHero.jpg";
+import Typography from "components/base/Typography";
 
 export const Container = styled.div``;
 
@@ -26,7 +27,14 @@ export const Calendar = styled.div`
 `;
 
 export const SegmentWrapper = styled.div`
-  padding: 1rem 4rem;
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-flow: dense;
+`;
+
+export const FilterLabel = styled.div`
+  padding: 1rem 4rem 0rem 4rem;
 
   @media screen and (max-width: 768px) {
     padding: 1rem 0.5rem;

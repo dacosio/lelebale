@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { PackageGeneratedProps, Option } from "./Package.props";
-import { Container, Hero, Calendar, SegmentWrapper } from "./Package.style";
+import {
+  Container,
+  Hero,
+  Calendar,
+  SegmentWrapper,
+  FilterLabel,
+} from "./Package.style";
 import Header from "components/layout/Header";
 import Navbar from "components/layout/Navbar";
 import StickyNav from "react-sticky-nav";
@@ -16,8 +22,9 @@ const PackageView = (props: PackageGeneratedProps) => {
     isOpenDrawer,
     setIsOpenDrawer,
     isModalVisible,
+    bundle,
   } = props;
-  const [state, setState] = useState(packageOptions[0]);
+
   return (
     <Container>
       <Header />
@@ -40,19 +47,22 @@ const PackageView = (props: PackageGeneratedProps) => {
           The calendar will go here *WIP*
         </Typography>
       </Calendar>
-      <SegmentWrapper>
-        <Typography variant="small" style={{ color: "#61605f", marginBottom: '0.5rem' }}>
+
+      <FilterLabel>
+        <Typography variant="small" style={{ color: "#61605f" }}>
           Choose a package:
         </Typography>
+        <SegmentWrapper>
+          <SegmentedControl
+            options={packageOptions}
+            selectedOption={selectedOption}
+            onClickControl={(value) => {
+              setSelectedOption(value);
+            }}
+          />
+        </SegmentWrapper>
+      </FilterLabel>
 
-        <SegmentedControl
-          options={packageOptions}
-          selectedOption={selectedOption}
-          onClickControl={(value) => {
-            setSelectedOption(value);
-          }}
-        />
-      </SegmentWrapper>
       <MobileDrawer
         direction="bottom"
         isOpenDrawer={isOpenDrawer}
@@ -69,6 +79,7 @@ const PackageView = (props: PackageGeneratedProps) => {
           />
         </SegmentWrapper>
       </MobileDrawer>
+      <div style={{ display: "block" }}>{bundle}</div>
     </Container>
   );
 };
