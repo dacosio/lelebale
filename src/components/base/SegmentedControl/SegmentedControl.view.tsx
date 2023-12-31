@@ -19,6 +19,8 @@ const SegmentedControl = (props: SegmentedControlProps): JSX.Element => {
                 size="sm"
                 onClick={() => onClickControl(option)}
                 hover={false}
+                takeFullWidth
+                className="segment-btn"
               />
             </div>
           );

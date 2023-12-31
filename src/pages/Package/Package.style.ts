@@ -26,5 +26,15 @@ export const Calendar = styled.div`
 `;
 
 export const SegmentWrapper = styled.div`
-  padding: 1rem;
+  padding: 1rem 4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    .segment-btn p {
+      font-size: 0.825em;
+    }
+  }
 `;
