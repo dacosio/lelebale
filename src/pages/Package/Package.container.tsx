@@ -38,6 +38,7 @@ const Package = (): JSX.Element => {
     setIsOpenDrawer,
     isModalVisible,
     bundle,
+    matches
   };
   return <PackageView {...generatedProps} />;
 };

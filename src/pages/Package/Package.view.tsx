@@ -13,6 +13,7 @@ import StickyNav from "react-sticky-nav";
 import Typography from "components/base/Typography";
 import SegmentedControl from "components/base/SegmentedControl";
 import MobileDrawer from "components/base/MobileDrawer";
+import Button from "components/base/Button";
 
 const PackageView = (props: PackageGeneratedProps) => {
   const {
@@ -23,6 +24,7 @@ const PackageView = (props: PackageGeneratedProps) => {
     setIsOpenDrawer,
     isModalVisible,
     bundle,
+    matches,
   } = props;
 
   return (
@@ -42,25 +44,40 @@ const PackageView = (props: PackageGeneratedProps) => {
           Packages
         </Typography>
       </Hero>
-      <Calendar>
+      {/* <Calendar>
         <Typography variant="subtitle1" style={{ color: "white" }}>
           The calendar will go here *WIP*
         </Typography>
-      </Calendar>
+      </Calendar> */}
 
       <FilterLabel>
-        <Typography variant="small" style={{ color: "#61605f" }}>
-          Choose a package:
-        </Typography>
-        <SegmentWrapper>
-          <SegmentedControl
-            options={packageOptions}
-            selectedOption={selectedOption}
-            onClickControl={(value) => {
-              setSelectedOption(value);
-            }}
-          />
-        </SegmentWrapper>
+        <div>
+          <Typography variant="small" style={{ color: "#61605f" }}>
+            Choose a package:
+          </Typography>
+          {matches && (
+            <Button
+              text={bundle}
+              variant="dark"
+              size="sm"
+              hover={false}
+              className="segment-btn"
+              takeFullWidth
+              onClick={() => setIsOpenDrawer(true)}
+            />
+          )}
+        </div>
+        {!matches && (
+          <SegmentWrapper>
+            <SegmentedControl
+              options={packageOptions}
+              selectedOption={selectedOption}
+              onClickControl={(value) => {
+                setSelectedOption(value);
+              }}
+            />
+          </SegmentWrapper>
+        )}
       </FilterLabel>
 
       <MobileDrawer
@@ -75,6 +92,7 @@ const PackageView = (props: PackageGeneratedProps) => {
             selectedOption={selectedOption}
             onClickControl={(value) => {
               setSelectedOption(value);
+              setIsOpenDrawer(false);
             }}
           />
         </SegmentWrapper>
