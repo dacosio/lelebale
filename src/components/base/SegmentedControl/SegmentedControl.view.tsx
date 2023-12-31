@@ -1,0 +1,31 @@
+import React from "react";
+import { SegmentedControlProps } from "./SegmentedControl.props";
+import { Container, Wrapper } from "./SegmentedControl.style";
+import Typography from "../Typography";
+import Button from "../Button";
+
+const SegmentedControl = (props: SegmentedControlProps): JSX.Element => {
+  const { options, selectedOption, onClickControl } = props;
+
+  return (
+    <Container>
+      <Wrapper>
+        {options.map((option) => {
+          return (
+            <div key={option}>
+              <Button
+                text={option}
+                variant={option === selectedOption ? "dark" : "light"}
+                size="sm"
+                onClick={() => onClickControl(option)}
+                hover={false}
+              />
+            </div>
+          );
+        })}
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default React.memo(SegmentedControl);

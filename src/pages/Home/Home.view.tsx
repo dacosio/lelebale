@@ -31,9 +31,7 @@ import Carousel from "components/module/Carousel";
 const HomeView = (props: HomeGeneratedProps) => {
   return (
     <Container>
-      <HeaderWrapper>
-        <Header />
-      </HeaderWrapper>
+      <Header />
       <StickyNav>
         <Navbar />
       </StickyNav>

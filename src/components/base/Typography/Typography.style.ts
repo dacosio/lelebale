@@ -37,7 +37,7 @@ const styles: Record<Variants, string> = {
     text-transform: uppercase;`,
   btn: `
     font-style: normal;
-    font-size: 14px;
+    font-size: ${pxToRem(14)};;
     line-height: 14px;
     letter-spacing: 2px;
     text-transform: uppercase`,

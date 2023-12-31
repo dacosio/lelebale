@@ -5,19 +5,22 @@ import Button from "components/base/Button";
 import Typography from "../../base/Typography";
 import { BiMessageDetail } from "react-icons/bi";
 import LelebaleLogo from "../../../images/lelebaleLogo.png";
-
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = (props: NavbarProps): JSX.Element => {
+  const { hideBook } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Container>
-      <img
-        src={LelebaleLogo}
-        alt="logo"
-        style={{ height: "auto", width: "100px" }}
-      />
+      <Link to="/">
+        <img
+          src={LelebaleLogo}
+          alt="logo"
+          style={{ height: "auto", width: "100px" }}
+        />
+      </Link>
       <Right>
         <Concierge onClick={() => setIsOpen(!isOpen)}>
           <Typography variant="list">concierge</Typography>
@@ -62,7 +65,9 @@ const Navbar = (props: NavbarProps): JSX.Element => {
           </AnimatePresence>
         </Concierge>
 
-        <Button variant="dark" text="Book Now" className="header-btn" />
+        {!hideBook && (
+          <Button variant="dark" text="Book Now" className="header-btn" />
+        )}
       </Right>
     </Container>
   );

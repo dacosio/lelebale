@@ -29,7 +29,7 @@ const border: Record<Variants, string> = {
 };
 
 export const ButtonContainer = styled.button<
-  ButtonStyleProps & { hasText: boolean }
+  ButtonStyleProps & { hasText: boolean; hover?: boolean }
 >`
   padding: ${({ size }) => padding[size]};
   background-color: ${({ variant }) => backgroundColor[variant]};
@@ -45,14 +45,16 @@ export const ButtonContainer = styled.button<
   }
 
   :hover {
-    background-color: ${({ variant }) => hoverBgColor[variant]};
-    border: ${({ variant, theme }) =>
-      variant == "dark" ? "1px solid black" : "none"};
+    background-color: ${({ variant, hover }) =>
+      !hover ? "none" : hoverBgColor[variant]};
+    border: ${({ variant, theme, hover }) =>
+      hover ? (variant == "dark" ? "1px solid black" : "none") : "none"};
 
     p {
-      color: ${({ variant, theme }) =>
-        variant === "dark" ? theme.dark : theme.light};
+      color: ${({ variant, theme, hover }) =>
+        hover ? (variant === "dark" ? theme.dark : theme.light) : "none"};
     }
   }
+
   cursor: pointer;
 `;

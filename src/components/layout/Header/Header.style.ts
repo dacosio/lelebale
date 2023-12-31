@@ -13,3 +13,11 @@ export const Container = styled.span`
     }
   }
 `;
+
+
+export const HeaderWrapper = styled.div`
+  background-color: ${({ theme }) => theme.dark};
+  color: ${({ theme }) => theme.light};
+  margin: 0;
+  padding: 0;
+`;

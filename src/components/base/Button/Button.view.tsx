@@ -14,6 +14,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     variant = "dark",
     takeFullWidth = false,
     size = "md",
+    hover = true,
     ...buttonProps
   } = props;
 
@@ -51,6 +52,7 @@ const Button = (props: ButtonProps): JSX.Element => {
       variant={variant}
       hasText={hasText}
       takeFullWidth={takeFullWidth}
+      hover={hover}
       {...buttonProps}>
       {text && (
         <Typography

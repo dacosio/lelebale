@@ -11,6 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variants;
   size?: ButtonSizes;
   takeFullWidth?: boolean;
+  hover?: boolean;
 }
 
 export type ButtonStyleProps = {
