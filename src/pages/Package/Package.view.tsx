@@ -6,6 +6,7 @@ import {
   Calendar,
   SegmentWrapper,
   FilterLabel,
+  DetailsWrapper,
 } from "./Package.style";
 import Header from "components/layout/Header";
 import Navbar from "components/layout/Navbar";
@@ -14,6 +15,8 @@ import Typography from "components/base/Typography";
 import SegmentedControl from "components/base/SegmentedControl";
 import MobileDrawer from "components/base/MobileDrawer";
 import Button from "components/base/Button";
+import Title from "components/base/Title";
+import Amenities from "components/module/Amenities";
 
 const PackageView = (props: PackageGeneratedProps) => {
   const {
@@ -97,7 +100,18 @@ const PackageView = (props: PackageGeneratedProps) => {
           />
         </SegmentWrapper>
       </MobileDrawer>
-      <div style={{ display: "block" }}>{bundle}</div>
+
+      <DetailsWrapper>
+        <div>
+          <Title
+            title={bundle.toUpperCase()}
+            variant="subtitle1"
+            price="5000/day"
+          />
+          <Amenities label="Seating Area" caption="With Sofa" />
+        </div>
+        <div style={{ justifySelf: "center" }}>insert calendar here</div>
+      </DetailsWrapper>
     </Container>
   );
 };

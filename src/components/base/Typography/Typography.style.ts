@@ -24,6 +24,14 @@ const styles: Record<Variants, string> = {
       line-height: 120%;
       text-transform: capitalize;
     `,
+  title3: `
+    font-family: Buckin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: ${pxToRem(36)};
+    line-height: 120%;
+    font-feature-settings: 'pnum'on, 'lnum'on
+    `,
   body: `
     font-style: normal;
     font-size: ${pxToRem(18)};
@@ -57,6 +65,7 @@ const font: Record<Variants, string> = {
   title1: weights.Bold,
   subtitle1: weights.Regular,
   title2: weights.Bold,
+  title3: weights.Regular,
   body: weights.Regular,
   list: weights.Regular,
   small: weights.Regular,

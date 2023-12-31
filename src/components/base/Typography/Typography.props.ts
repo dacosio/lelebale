@@ -6,6 +6,7 @@ export type Variants =
   | "title1"
   | "subtitle1"
   | "title2"
+  | "title3"
   | "body"
   | "list"
   | "small"

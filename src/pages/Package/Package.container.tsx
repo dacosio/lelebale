@@ -28,7 +28,7 @@ const Package = (): JSX.Element => {
   }, [selectedOption]);
 
   const matches = useMediaQuery("(max-width: 425px)");
-  console.log(matches);
+
   const generatedProps = {
     // generated props here
     packageOptions,
@@ -38,7 +38,7 @@ const Package = (): JSX.Element => {
     setIsOpenDrawer,
     isModalVisible,
     bundle,
-    matches
+    matches,
   };
   return <PackageView {...generatedProps} />;
 };

@@ -46,3 +46,22 @@ export const FilterLabel = styled.div`
     }
   }
 `;
+
+export const DetailsWrapper = styled.div`
+  padding: 1rem 4rem 0rem 4rem;
+  padding-top: 2rem;
+
+  display: grid;
+  grid-template-columns: 62.5% 1fr;
+  gap: 3rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    .segment-btn p {
+      font-size: 0.825em;
+    }
+  }
+`;
