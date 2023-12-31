@@ -40,6 +40,25 @@ export const ButtonContainer = styled.button<
   align-items: center;
   justify-content: center;
   border: 0;
+  transition: all 0.35s;
+  position: relative;
+
+  p {
+    position: relative;
+    z-index: 2;
+  }
+
+  :after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    transition: all 0.35s;
+  }
+
   :focus {
     outline: none;
   }
@@ -52,9 +71,16 @@ export const ButtonContainer = styled.button<
 
     p {
       color: ${({ variant, theme, hover }) =>
-        hover ? (variant === "dark" ? theme.dark : theme.light) : "none"};
+        hover ? (variant === "dark" ? theme.dark : theme.light) : "white"};
     }
+  }
+  :hover:after {
+    width: 100%;
   }
 
   cursor: pointer;
+
+  :active {
+    scale: 0.9;
+  }
 `;

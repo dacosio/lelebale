@@ -24,3 +24,7 @@ export const Calendar = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const SegmentWrapper = styled.div`
+  padding: 1rem;
+`;

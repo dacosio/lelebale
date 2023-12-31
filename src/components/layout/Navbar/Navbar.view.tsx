@@ -66,7 +66,7 @@ const Navbar = (props: NavbarProps): JSX.Element => {
         </Concierge>
 
         {!hideBook && (
-          <Button variant="dark" text="Book Now" className="header-btn" />
+          <Button variant="dark" text="Book Now" className="header-btn" hover={false}/>
         )}
       </Right>
     </Container>
