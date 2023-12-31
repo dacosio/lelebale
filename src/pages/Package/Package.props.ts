@@ -9,4 +9,7 @@ export interface PackageGeneratedProps {
   packageOptions: string[];
   selectedOption: string;
   setSelectedOption: Dispatch<SetStateAction<string>>;
+  isOpenDrawer: boolean;
+  setIsOpenDrawer: Dispatch<SetStateAction<boolean>>;
+  isModalVisible: boolean;
 }

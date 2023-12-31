@@ -1,22 +1,12 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { apiSlice } from "./api/apiSlice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import authReducer from "../features/auth/authSlice";
-import sidebarReducer from "../features/sidebar/sidebarSlice";
-import authModalReducer from "../features/authModal/authModalSlice";
-import addCropReducer from "../features/addCrop/addCropSlice";
-import locationReducer from "../features/location/locationSlice";
-import cropReducer from "../features/crops/cropSlice";
+import packageReducer from "../features/filter/filterSlice";
 
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    auth: authReducer,
-    sidebar: sidebarReducer,
-    authModal: authModalReducer,
-    addCrop: addCropReducer,
-    location: locationReducer,
-    crop: cropReducer,
+    package: packageReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),

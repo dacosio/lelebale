@@ -13,11 +13,17 @@ const Package = (): JSX.Element => {
 
   const [selectedOption, setSelectedOption] = useState(packageOptions[0]);
 
+  const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+
   const generatedProps = {
     // generated props here
     packageOptions,
     selectedOption,
     setSelectedOption,
+    isOpenDrawer,
+    setIsOpenDrawer,
+    isModalVisible,
   };
   return <PackageView {...generatedProps} />;
 };

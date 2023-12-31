@@ -9,6 +9,7 @@ export const theme: Theme = {
   light: "#FFFFFF",
   dark: "#000000",
   bg: "#eae4dc",
+  gray: "#61605f"
 };
 
 export default theme;
