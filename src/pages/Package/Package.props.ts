@@ -14,4 +14,5 @@ export interface PackageGeneratedProps {
   isModalVisible: boolean;
   bundle: string;
   matches: boolean;
+  houseRules: string[];
 }

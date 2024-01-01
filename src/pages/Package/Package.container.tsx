@@ -28,6 +28,14 @@ const Package = (): JSX.Element => {
   }, [selectedOption]);
 
   const matches = useMediaQuery("(max-width: 425px)");
+  const houseRules = [
+    "smoking inside the home is not allowed",
+    "designated smoking area at the back",
+    "pets are prohibited unless agreed to/upon in advance",
+    "do not exceed designated amount of parking provided for free in the property",
+    "fire extinguisher equipped and available for emergency us",
+    "guests shall see to it that they lock their doors, windows & garage",
+  ];
 
   const generatedProps = {
     // generated props here
@@ -39,6 +47,7 @@ const Package = (): JSX.Element => {
     isModalVisible,
     bundle,
     matches,
+    houseRules,
   };
   return <PackageView {...generatedProps} />;
 };

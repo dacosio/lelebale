@@ -7,6 +7,11 @@ import {
   SegmentWrapper,
   FilterLabel,
   DetailsWrapper,
+  AmenitiesWrapper,
+  Head,
+  Left,
+  Description,
+  Right,
 } from "./Package.style";
 import Header from "components/layout/Header";
 import Navbar from "components/layout/Navbar";
@@ -17,6 +22,7 @@ import MobileDrawer from "components/base/MobileDrawer";
 import Button from "components/base/Button";
 import Title from "components/base/Title";
 import Amenities from "components/module/Amenities";
+import HouseRules from "components/base/HouseRules";
 
 const PackageView = (props: PackageGeneratedProps) => {
   const {
@@ -28,6 +34,7 @@ const PackageView = (props: PackageGeneratedProps) => {
     isModalVisible,
     bundle,
     matches,
+    houseRules,
   } = props;
 
   return (
@@ -102,15 +109,45 @@ const PackageView = (props: PackageGeneratedProps) => {
       </MobileDrawer>
 
       <DetailsWrapper>
-        <div>
+        <Left>
           <Title
             title={bundle.toUpperCase()}
             variant="subtitle1"
             price="5000/day"
           />
-          <Amenities label="Seating Area" caption="With Sofa" />
-        </div>
-        <div style={{ justifySelf: "center" }}>insert calendar here</div>
+          <Head>
+            <Typography variant="title3" style={{ color: "#171717" }}>
+              About
+            </Typography>
+          </Head>
+          <Description>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem,
+            neque unde. Veritatis rem deleniti excepturi ipsa accusantium
+            dolores repellendus praesentium. In laborum cum aliquid corporis
+            deserunt natus tenetur quasi? Cumque ducimus possimus debitis
+            molestias deleniti ea corrupti provident porro cum! Similique nisi,
+            explicabo laboriosam accusamus fuga magni alias iure facere.
+          </Description>
+          <AmenitiesWrapper>
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+            <Amenities label="Free Wifi" caption="High Speed Internet" />
+          </AmenitiesWrapper>
+          <Head>
+            <HouseRules title="house rules and policies" items={houseRules} />
+          </Head>
+          {/* <Head>
+            <Typography variant="title3" style={{ color: "#171717" }}>
+              About
+            </Typography>
+          </Head> */}
+        </Left>
+        <Right>insert calendar here</Right>
       </DetailsWrapper>
     </Container>
   );

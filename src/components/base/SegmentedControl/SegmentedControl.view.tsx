@@ -20,6 +20,7 @@ const SegmentedControl = (props: SegmentedControlProps): JSX.Element => {
               hover={false}
               takeFullWidth
               className="segment-btn"
+              // style={{ backgroundColor: "#EAE4DC" }}
             />
           </div>
         );

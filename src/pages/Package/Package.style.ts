@@ -3,7 +3,9 @@ import { theme } from "utils/Theme";
 import PackageHero from "../../images/packages/packageHero.jpg";
 import Typography from "components/base/Typography";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  // background-color: white;
+`;
 
 export const Hero = styled.div`
   display: flex;
@@ -57,6 +59,8 @@ export const DetailsWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   @media screen and (max-width: 425px) {
@@ -64,4 +68,28 @@ export const DetailsWrapper = styled.div`
       font-size: 0.825em;
     }
   }
+`;
+
+export const AmenitiesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 1rem;
+`;
+
+export const Head = styled.div`
+  padding: 3rem 1rem 0rem 1rem;
+`;
+
+export const Left = styled.div``;
+
+export const Right = styled.div`
+  justify-self: center;
+  border: 1px solid pink;
+  width: 100%;
+`;
+
+export const Description = styled.div`
+  padding-left: 1rem;
+  padding-bottom: 2rem;
 `;
