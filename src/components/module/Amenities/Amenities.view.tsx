@@ -2,7 +2,7 @@ import React from "react";
 import { AmenitiesProps } from "./Amenities.props";
 import { Container, Icon } from "./Amenities.style";
 import { HiOutlineWifi } from "react-icons/hi2";
-import Typography from "components/base/Typography";
+import Typography from "../../base/Typography";
 
 const Amenities = (props: AmenitiesProps): JSX.Element => {
   const { label, caption } = props;
