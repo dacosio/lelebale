@@ -10,8 +10,10 @@ const Amenities = (props: AmenitiesProps): JSX.Element => {
     <Container>
       <Icon as={HiOutlineWifi} />
       <div>
-        <Typography variant="small">{label}</Typography>
-        <Typography variant="small" style={{ color: "#61605F" }}>
+        <Typography variant="small" style={{ margin: 0 }}>
+          {label}
+        </Typography>
+        <Typography variant="small" style={{ color: "#61605F", margin: 0 }}>
           {caption}
         </Typography>
       </div>
