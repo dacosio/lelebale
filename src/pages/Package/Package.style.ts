@@ -16,7 +16,7 @@ export const Hero = styled.div`
   background-size: cover;
   background-position: bottom;
   max-height: 100%;
-  height: calc(60vh - 122px);
+  height: calc(60vh - 130px);
 `;
 
 export const Calendar = styled.div`

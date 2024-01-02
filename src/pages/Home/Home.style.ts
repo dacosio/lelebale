@@ -15,7 +15,7 @@ export const Hero = styled.div`
   background-size: cover;
   background-position: center;
   max-height: 100%;
-  height: calc(100vh - 122px);
+  height: calc(100vh - 130px);
 `;
 
 export const HeroHeader = styled.h1`
