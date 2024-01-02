@@ -147,7 +147,7 @@ const PackageView = (props: PackageGeneratedProps) => {
             </Typography>
           </Head> */}
         </Left>
-        <Right>insert calendar here</Right>
+        <Right>insert calendar here! TODO</Right>
       </DetailsWrapper>
     </Container>
   );
